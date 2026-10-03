@@ -1,1 +1,33 @@
-<p>register works!</p>
+<main class="container">
+  <h1>Criar conta</h1>
+  <p>Valide os campos para conferir o formulário. O cadastro ainda não envia dados a um servidor.</p>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group">
+      <label for="name">Nome</label>
+      <input id="name" class="form-control" formControlName="name" autocomplete="name">
+      <small role="alert" *ngIf="form.get('name')?.touched && form.get('name')?.hasError('required')">Informe seu nome.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input id="email" type="email" class="form-control" formControlName="email" autocomplete="email">
+      <small role="alert" *ngIf="form.get('email')?.touched && form.get('email')?.invalid">Informe um e-mail válido.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Senha</label>
+      <input id="password" type="password" class="form-control" formControlName="password" autocomplete="new-password">
+      <small role="alert" *ngIf="form.get('password')?.touched && form.get('password')?.hasError('minlength')">Use pelo menos 8 caracteres.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">Confirme a senha</label>
+      <input id="confirmPassword" type="password" class="form-control" formControlName="confirmPassword" autocomplete="new-password">
+      <small role="alert" *ngIf="passwordMismatch">As senhas não coincidem.</small>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Validar formulário</button>
+    <p *ngIf="submitted && form.valid" role="status">Formulário validado. O cadastro ainda depende de integração com o servidor.</p>
+  </form>
+</main>
