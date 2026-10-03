@@ -1,17 +1,31 @@
-# E-Commerce Funko
+# Loja de colecionáveis Funko — protótipo Angular
 
-Protótipo Angular/PrimeNG de uma loja de colecionáveis. A aplicação está dentro de `E-Commerce-Funko/`.
+Protótipo de loja construído com Angular 14 e PrimeNG. A aplicação fica em E-Commerce-Funko/.
 
-## Executar
+## Requisitos e execução
 
-```sh
+- Node.js compatível com Angular CLI 14
+- npm
+
+~~~sh
 cd E-Commerce-Funko
 npm ci
 npm start
-```
+~~~
 
-O servidor de desenvolvimento usa a porta 4201. Build e testes: `npm run build` e `npm test`.
+Abra http://localhost:4201.
+
+## Build e testes
+
+Dentro de E-Commerce-Funko/:
+
+~~~sh
+npm run build
+npm test
+~~~
+
+Os testes usam Karma e podem exigir um navegador compatível. Como verificação manual, navegue pelo catálogo e confira os formulários de cadastro e checkout demonstrativo.
 
 ## Limitações
 
-Catálogo, autenticação, cadastro e checkout ainda não estão conectados a um backend. O formulário de cadastro valida dados localmente e não cria contas. Não colete dados de cartão; integração de pagamento deve usar um provedor seguro.
+Catálogo, autenticação, cadastro e checkout não estão conectados a um backend. O formulário não cria contas. Não informe dados de cartão. Uma integração real deve usar um provedor de pagamento seguro.
